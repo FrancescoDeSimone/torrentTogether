@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+     <link rel="stylesheet" href="src/css/index.css"> 
+  </head>
+  <body>
+    <h1>TorrentTogether</h1>
+    <form>
+      <label for="torrentId">Stream from a magnet link: </label>
+      <input name="torrentId", placeholder="magnet:">
+      <button type="submit">Download</button>
+    </form>
+    <video id="output"></video>
+    <div id="snackbar"></div>
+    <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+    <script src="src/js/index.js"></script>
+    <script src="src/js/stream.js"></script>
+  </body>
+</html>
