@@ -1,3 +1,6 @@
+/* Import fonts from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Roboto&display=swap');
+
 /* copied from https://www.w3schools.com/howto/howto_js_snackbar.asp */
  /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
@@ -44,5 +47,108 @@
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
 } 
-
 /* https://www.w3schools.com/howto/howto_js_snackbar.asp */
+
+
+/* ====================== 
+RESET and VARIABLES
+========================*/
+:root {
+  --border-radius: 8px;
+  --secondary-gradient: linear-gradient( 355.3deg,  rgba(255,0,132,1) -66.6%, rgba(51,0,27,1) 96.6% );
+  --primary-gradient-webkit: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  --primary-gradient: linear-gradient(to top, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  --background-color: #2C5364;  
+
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+TYPOGRAPHY
+=======================*/
+
+h1,
+h2,
+h3 {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: bold;
+}
+
+body {
+  background: var(--background-color);
+  font-family:  'Fira Sans', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding-top:2rem;
+  padding-bottom: 2rem;
+  background: var(--primary-gradient-webkit);
+  background: var(--primary-gradient);
+
+}
+
+.magnetFormContainer {
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 5px 8px 10px black;
+  border-radius: var(--border-radius);
+  width: 30%;
+  background-image: var(--secondary-gradient);
+  color: white;
+
+}
+
+.magnetFormContainer h1 {
+  margin-bottom: 2rem;
+}
+
+/* ==============
+VIDEO SECTION
+===============*/
+.videoSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.videoContainer video {
+  width: 100%;
+  height: 100%;
+}
+
+.shareLinkContainer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  color: white;
+}
+
+.shareLinkContainer h3,
+.shareLinkContainer h2 {
+  margin-bottom: 1rem;
+}
+
+.shareLinkContainer a {
+  cursor: pointer;
+  color: white;
+}
+
+.shareLinkContainer a:hover {
+  text-decoration: underline;
+}
+
+/* =============
+SNACKBAR
+===============*/
+
+#snackbar {
+  border-radius: var(--border-radius);
+  background-image: var(--secondary-gradient);
+}

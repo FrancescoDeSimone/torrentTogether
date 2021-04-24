@@ -4,14 +4,26 @@
      <link rel="stylesheet" href="src/css/index.css"> 
   </head>
   <body>
-    <h1 class="title">TorrentTogether</h1>
-    <form style="display:none;">
-      <label for="torrentId">Stream from a magnet link: </label>
-      <input name="torrentId", placeholder="magnet:">
-      <button type="submit">Download</button>
-    </form>
-    <a id="url"></a>
-    <video id="output" autoplay="true"></video>
+    <header>
+      <div class="magnetFormContainer">
+        <h1 class="title">TorrentTogether</h1>
+        <form class="magnetForm" style="display:none;">
+          <label for="torrentId">Stream from a magnet link: </label>
+          <input name="torrentId", placeholder="magnet:">
+          <button type="submit">Download</button>
+        </form>
+      </div>
+    </header>
+    <section class="videoSection">
+      <div class="videoContainer">
+        <video id="output" autoplay="true"></video>
+      </div>
+      <div class="shareLinkContainer">
+        <h2 id="videoTitle"></h2>
+        <h3>Url per la condivisione:</h3>
+        <a id="url"></a>
+      </div>
+    </section>
     <div id="snackbar"></div>
     <script src="src/js/lib/webtorrent.min.js"></script>
     <script src="src/js/lib/peerjs.min.js"></script> 
