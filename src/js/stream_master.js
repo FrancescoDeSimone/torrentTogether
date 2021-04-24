@@ -19,11 +19,11 @@ const startMaster =
         peer.on('connection', (c) => {
             conn.push(c)
             toast("Connected to: " +
-                conn.reduce((acc, el) => acc += el.peer + "<\\br>", ""))
+                conn.reduce((acc, el) => acc += el.peer + "\\n", ""))
             ready()
+            sendVideoStatus()
         })
         peer.on('disconnected', connectionLost)
-        peer.on('close', connectionClose)
         peer.on('error', console.error)
     }
 
@@ -35,7 +35,7 @@ const ready =
             }))
         conn.forEach(c => c.on('close', () => {
             toast("Connection reset\nAwaiting connection...")
-            conn = null
+            c = null
         }))
     }
 

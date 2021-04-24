@@ -1,6 +1,6 @@
 var timeoutSnackbar = undefined
 const toast = str => {
-    const snackbar = document.getElementById("snackbar");
+    const snackbar = document.getElementById("snackbar")
     snackbar.className = "show"
     snackbar.innerText = str
     if (timeoutSnackbar != undefined) clearTimeout(timeoutSnackbar)
@@ -10,4 +10,4 @@ const toast = str => {
 
 document.getElementById('snackbar')
     .addEventListener('click',
-        () => snackbar.className = snackbar.className.replace("show", ""));
+        () => snackbar.className = snackbar.className.replace("show", ""))

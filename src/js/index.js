@@ -54,12 +54,6 @@ const connectionLost =
         peer.reconnect()
     }
 
-const connectionClose =
-    () => {
-        conn = null
-        toast('Connection destroyed')
-    }
-
 const updateTitle =
     (filename) => {
         document.querySelector("#videoTitle").innerText = filename
@@ -75,12 +69,21 @@ const loadScript = (url, callback) => {
                 callback()
             }
         }
-    } else { // Others
+    } else {
         script.onload = () => {
             callback()
         }
     }
-
     script.src = url
     document.getElementsByTagName("head")[0].appendChild(script)
+}
+
+const copyAtClick = () => {
+  const copyText = document.getElementById("url")
+  document.addEventListener('copy', (e) => {
+      e.clipboardData.setData('text/plain', copyText.innerText)
+      e.preventDefault()
+   }, true)
+   document.execCommand('copy')  
+   toast('Url copied'.toUpperCase())
 }

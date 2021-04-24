@@ -24,7 +24,15 @@ const startSlave =
         peer.on('disconnected', connectionLost)
         peer.on('close', connectionClose)
         peer.on('error', console.error)
+        document.getElementById("url").innerText =
+                window.location.href
         setTimeout(() => join(id), 1000)
+    }
+
+const connectionClose =
+    () => {
+        conn = null
+        toast('Connection destroyed')
     }
 
 const join = (id) => {
