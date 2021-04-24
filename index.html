@@ -4,16 +4,20 @@
      <link rel="stylesheet" href="src/css/index.css"> 
   </head>
   <body>
-    <h1>TorrentTogether</h1>
-    <form>
+    <h1 class="title">TorrentTogether</h1>
+    <form style="display:none;">
       <label for="torrentId">Stream from a magnet link: </label>
       <input name="torrentId", placeholder="magnet:">
       <button type="submit">Download</button>
     </form>
+    <a id="url"></a>
     <video id="output"></video>
     <div id="snackbar"></div>
     <script src="https://cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script> 
     <script src="src/js/index.js"></script>
-    <script src="src/js/stream.js"></script>
+    <script src="src/js/toast.js"></script>
+    <script src="src/js/stream_master.js"></script>
+    <script src="src/js/stream_slave.js"></script>
   </body>
 </html>
