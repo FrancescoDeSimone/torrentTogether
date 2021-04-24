@@ -35,6 +35,7 @@ const startStream =
         client.add(torrentId, (torrent) => {
             const file = torrent.files.find((file) => file.name.endsWith('.mp4'))
             file.renderTo('#output')
+            updateTitle(file.name)
         })
     }
 
@@ -57,6 +58,11 @@ const connectionClose =
     () => {
         conn = null
         toast('Connection destroyed')
+    }
+
+const updateTitle =
+    (filename) => {
+        document.querySelector("#videoTitle").innerText = filename
     }
 
 const loadScript = (url, callback) => {
